@@ -135,70 +135,7 @@ function extract () {
     else
         echo "'$1' is not a valid file"
     fi
-}
-
-# A function to git clone a repo, cd into the newly created folder,
-# and open all the repo's files in Sublime Text 3
-# USE: gclsubl git@github.com:ktravers/crowdfunding-sql-lab-ruby-007.git
-# credit: Jeremy Sklarsky (http://jeremysklarsky.github.io/)
-# function gclsubl () {
-#           git clone $1;
-#           cd `basename $1 .git`;                      # in bash, everything between backticks
-#           open . -a /Applications/Sublime\ Text.app;  # will be replaced with the output of the command.
-#                                                       # basename chops off the path from the file name
-# }                                                     # .git removes the file extension
-
-# A function that clones a repo, cd into the new folder, and opens the README.md in the default editor for .md files
-# USE: gclread git@github.om:ktravers/crowdfunding-sql-lab-ruby007.git
-# function gclread () {
-#           git clone $1;
-#           cd `basename $1 .git`;                      
-#           open README.md;                           
-# }
-
-# A function that clones a repo, cd into the new folder, creates and checkouts onto a new branch called "wip-revision" and opens the README.md in the default editor for .md files
-# USE: gclrevread git@github.om:ktravers/crowdfunding-sql-lab-ruby007.git
-# function gclrevread () {
-#           git clone $1;
-#           cd `basename $1 .git`;                      
-#           git checkout -b wip-revision;
-#           open README.md;                             
-# }
-
-# A function that clones a repo, cd into the new folder, creates and checkouts onto a new branch called "wip-style" and opens the README.md in the default editor for .md files
-# USE: gclstyleread git@github.om:ktravers/crowdfunding-sql-lab-ruby007.git
-# function gclstyleread () {
-#           git clone $1;
-#           cd `basename $1 .git`;                      
-#           git checkout -b wip-style;
-#           open README.md;                             
-# }
-
-# function gcampstyle () {
-#   git commit -am "style edits"
-#   git push
-# }
-
-# A function that clones a repo, cd into the new folder, and opens the Xcode workspace
-# USE: gclxcw git@github.om:ktravers/crowdfunding-sql-lab-ruby007.git
-function gclxcw () {
-          git clone $1;
-          cd `basename $1 .git`;                      
-          open *xcworkspace;                          
-}
-
-# Removes the Pods file, Podfile, and Podfile.lock from the current directory.
-# function unpodulate () {
-#   rm -rf Pods;
-#   echo "Deleting Pods"
-#   rm Podfile.lock;
-#   echo "Deleting Podfile.lock"
-#   rm Podfile;
-#   echo "Deleting Podfile"
-#   rm -rf *.xcworkspace;
-#   echo "Deleting *.xcworkspace folder"
-#   echo "To remove the warnings, delete the Pods targets from the project Config settings from within Xcode."
-# }    
+}  
 
 # Sets the upstream for the branch name submitted as an argument
 # USE: gitupstream wip-development
@@ -206,23 +143,6 @@ function gclxcw () {
 function gitupstream () {
   git branch --set-upstream-to=origin/$1 $1
 }
-
-# function setupForLearn () {
-#   cp ~/Development/LearnCo/LICENSE.md .
-#   echo "copied LICENSE.md"
-#   cp ~/Development/LearnCo/CONTRIBUTING.md .
-#   echo "copied CONTRIBUTING.md"
-#   cp ~/Development/LearnCo/.learn .
-#   echo "copied .learn"
-#   cp ~/Development/LearnCo/.gitignore .
-#   echo "copied .gitignore"
-#   cp ~/Development/LearnCo/.gitattributes .
-#   echo "copied .gitattributes"
-#   cp ~/Development/LearnCo/test_runner.sh .
-#   echo "copied test_runner.sh"
-#   echo "manually add the post-script action to the Xcode scheme"
-#   echo "manually create a README.md file"
-# }
 
 # usage example: $ finderShowHidden YES
 function finderShowHidden () {
@@ -274,9 +194,6 @@ function repod () {
   alias grv="git remote -v" #groovy
   alias gco="git checkout"
   alias gcob="git checkout -b"
-  alias sol="git co solution"
-  alias mas="git co master"
-  #alias mermas="git merge master"
 
   # from Zadr
   alias oops="git commit --amend"
@@ -293,18 +210,8 @@ function repod () {
   alias pbx="subl *.xcodeproj/project.pbxproj"
   alias info="subl */Info.plist"
   alias readme="open README.md"
-  alias changelog="open CHANGELOG.md"
-  alias relnotes="open RELEASE_NOTES.md"
   alias podfile="subl Podfile"
   alias podf="subl Podfile"
-  alias podulate="pod install"
-  alias podclean="rm -rf Pods"
-
-  # squad
-  alias Dev="git co Development"
-  alias merDev="git merge Development"
-  alias dos="git co dosamigos"
-  alias merdos="git merge dosamigos"
 
 # Case-Insensitive Auto Completion
   bind "set completion-ignore-case on" 
