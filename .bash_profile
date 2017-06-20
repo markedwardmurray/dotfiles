@@ -225,10 +225,5 @@ function repod () {
     . `brew --prefix`/etc/bash_completion
   fi
 
-  # RVM
-  # Mandatory loading of RVM into the shell
-  # This must be the last line of your bash_profile always
-  source ~/.profile
+[ -f ~/.bashrc ] && source ~/.bashrc
 
-
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
