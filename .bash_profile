@@ -227,3 +227,7 @@ function repod () {
 
 [ -f ~/.bashrc ] && source ~/.bashrc
 
+export PATH="$HOME/.fastlane/bin:$PATH"
+
+export SSL_CERT_FILE=/usr/local/etc/openssl/certs/Certificates.pem
+
